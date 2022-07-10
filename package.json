@@ -1,0 +1,29 @@
+{
+	"name": "sankey-js",
+	"version": "1.0.0",
+	"description": "A TypeScript library for generating sankey diagrams",
+	"main": "dist/index.js",
+	"types": "dist/index.d.js",
+	"scripts": {
+		"build": "tsc",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/LukeMiles49/sankey-js.git"
+	},
+	"keywords": [
+		"sankey",
+		"diagram",
+		"canvas"
+	],
+	"author": "Luke Miles",
+	"license": "MPL-2.0",
+	"bugs": {
+		"url": "https://github.com/LukeMiles49/sankey-js/issues"
+	},
+	"homepage": "https://github.com/LukeMiles49/sankey-js#readme",
+	"devDependencies": {
+		"typescript": "^4.7.4"
+	}
+}
