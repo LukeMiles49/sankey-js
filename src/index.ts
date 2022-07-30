@@ -65,13 +65,6 @@ export class Sankey {
 			layers.push(currentLayer);
 			let totalValue = 0;
 			for (const node of currentLayer) {
-				const value = node.value ?? Math.max(node.currentInput, node.currentOutput);
-				if (
-					(node.inputs.length > 0 && !equalEpsilon(node.currentInput, value))
-					|| (node.outputs.length > 0 && !equalEpsilon(node.currentOutput, value))
-				) {
-					throw new Error(`Input and output of ${node.label} do not match (input ${node.currentInput}, output ${node.currentOutput})`);
-				}
 				totalValue += node.flow;
 				for (const edge of node.outputs) {
 					let deps = dependencies.get(edge.to)! - 1;
@@ -184,7 +177,7 @@ export class SankeyNode {
 	}
 	
 	get flow(): number {
-		return Math.max(this.currentInput, this.currentOutput, this.value ?? 0);
+		return this.value ?? Math.max(this.currentInput, this.currentOutput);
 	}
 }
 
